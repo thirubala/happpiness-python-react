@@ -3,6 +3,10 @@ from flask import jsonify, json
 from flask import Flask,render_template,make_response
 from flask import request
 import requests
+import os
+import sys
+
+CLUSTER_NAME = os.environ.get("CLUSTER_NAME")
 
 @app.route("/")
 def home():
@@ -35,7 +39,7 @@ def get_metric():
 	metric = jsonData['metric']
 
 	# This is the url to which the query is made
-	url = "https://data.declassification29.hasura-app.io/v1/query"
+	url = "https://data." + CLUSTER_NAME + ".hasura-app.io/v1/query"
 
 	# This is the json payload for the query
 	requestPayload = {
