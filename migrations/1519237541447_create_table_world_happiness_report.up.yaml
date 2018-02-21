@@ -1,0 +1,11 @@
+- args:
+    sql: CREATE TABLE "world_happiness_report"("ID" integer NOT NULL, "Country" text
+      NOT NULL, "H_Rank" numeric NOT NULL, "H_Score" numeric NOT NULL, "W_High" numeric
+      NOT NULL, "W_Low" numeric NOT NULL, "GDP" numeric NOT NULL, "Family" numeric
+      NOT NULL, "HLE" numeric NOT NULL, "Freedom" numeric NOT NULL, "Generosity" numeric
+      NOT NULL, "TGC" numeric NOT NULL, "Dystopia" numeric NOT NULL, PRIMARY KEY ("ID")
+      )
+  type: run_sql
+- args:
+    name: world_happiness_report
+  type: add_existing_table_or_view
